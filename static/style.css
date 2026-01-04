@@ -1,0 +1,214 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    min-height: 100vh;
+    background: #f4f6fb;
+    color: #111827;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    height: 64px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.navbar h2 {
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.logout-btn {
+    background: #ef4444;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+.dashboard {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+}
+
+/* =========================
+   PANELS
+========================= */
+.left-panel,
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: #111827;
+}
+
+/* =========================
+   FORMS
+========================= */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+input,
+select {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #6366f1;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4f46e5;
+}
+
+/* =========================
+   STATS SECTION
+========================= */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-box {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.stat-box span {
+    display: block;
+    margin-top: 8px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #4f46e5;
+}
+
+/* =========================
+   ALERT
+========================= */
+.alert {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ef4444;
+    font-weight: 500;
+}
+
+/* =========================
+   LISTS (EXPENSES)
+========================= */
+ul {
+    list-style: none;
+}
+
+li {
+    background: #f9fafb;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+li strong {
+    color: #111827;
+}
+
+/* ACTION BUTTONS */
+li button {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+    background: #10b981;
+}
+
+li form button {
+    background: #ef4444;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}

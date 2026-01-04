@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Expense Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- 🔹 TOP NAVBAR -->
+<nav class="navbar">
+    <h2>💰 Expense Tracker</h2>
+    <h2>Welcome {{username}}</h2>
+    <a href="/logout" class="logout-btn">Logout</a>
+</nav>
+
+<!-- 🔹 MAIN DASHBOARD -->
+<div class="dashboard">
+
+    <!-- 🔹 LEFT PANEL -->
+    <div class="left-panel">
+
+        <!-- ADD EXPENSE -->
+        <div class="card">
+            <h3>Add Expense</h3>
+            <form action="/add" method="POST">
+                <input type="text" name="title" placeholder="Expense Name" required>
+                <input type="number" name="amount" placeholder="Amount" required>
+                <input type="date" name="date" required>
+
+                <select name="category_id" required>
+                    <option value="">Select Category</option>
+                    {% for c in categories %}
+                        <option value="{{ c.id }}">{{ c.name }}</option>
+                    {% endfor %}
+                </select>
+
+                <button>Add Expense</button>
+            </form>
+        </div>
+
+        <!-- ADD CATEGORY -->
+        <div class="card">
+            <h3>Add Category</h3>
+            <form action="/add-category" method="POST">
+                <input type="text" name="category" placeholder="New Category" required>
+                <button>Add Category</button>
+            </form>
+        </div>
+
+        <!-- ADD INCOME -->
+        <div class="card">
+            <h3>Add Income</h3>
+            <form action="/add-income" method="POST">
+                <input type="text" name="source" placeholder="Salary / Freelance" required>
+                <input type="number" name="amount" required>
+                <input type="date" name="date" required>
+                <button>Add Income</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 🔹 RIGHT PANEL -->
+    <div class="right-panel">
+
+        <!-- SUMMARY -->
+        <div class="stats">
+            <div class="stat-box">Total Expense<br><span>₹{{ total }}</span></div>
+            <div class="stat-box">Income<br><span>₹{{ total_income }}</span></div>
+            <div class="stat-box">Savings<br><span>₹{{ savings }}</span></div>
+        </div>
+
+        <!-- MONTH COMPARISON -->
+        <div class="card">
+            <h3>Monthly Comparison</h3>
+            <p>Current Month: ₹{{ current_month }}</p>
+            <p>Previous Month: ₹{{ previous_month }}</p>
+            <p><strong>Difference: ₹{{ difference }}</strong></p>
+        </div>
+
+        <!-- BUDGET -->
+        <div class="card">
+            <h3>Set Monthly Budget</h3>
+            <form action="/set-budget" method="POST">
+                <input type="month" name="month" required>
+                <input type="number" name="amount" placeholder="Budget Amount" required>
+                <button>Set Budget</button>
+            </form>
+            {% if alert %}
+                <p class="alert">{{ alert }}</p>
+            {% endif %}
+        </div>
+
+        <!-- MONTH-WISE TOTAL -->
+        <div class="card">
+            <h3>Month-wise Expense</h3>
+            <ul>
+                {% for m in month_totals %}
+                    <li>{{ m.month }} → ₹{{ m.total }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- EXPENSE LIST -->
+        <div class="card">
+            <h3>All Expenses</h3>
+            <ul>
+                {% for e in expenses %}
+                <li>
+                    <span>
+                        <strong>{{ e.title }}</strong><br>
+                        {{ e.category }} – ₹{{ e.amount }}<br>
+                        {{ e.date }}
+                    </span>
+
+                    <span>
+                        <a href="/edit/{{ e.id }}">
+                            <button>Edit</button>
+                        </a>
+                        <form action="/delete/{{ e.id }}" method="POST" style="display:inline;">
+                            <button>Delete</button>
+                        </form>
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+    {% if alert %}
+<div class="alert alert-danger">
+    {{ alert }}
+</div>
+{% endif %}
+
+</div>
+
+</body>
+</html>
