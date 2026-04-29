@@ -1,7 +1,7 @@
 # 💰 Expense Tracker
 
-![GitHub stars](https://img.shields.io/github/stars/Devasena-6666/ExpenseTracker?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Devasena-6666/ExpenseTracker?style=social)
+![GitHub stars](https://img.shields.io/github/stars/Devasena-6666/ExpenseTraker?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Devasena-6666/ExpenseTraker?style=social)
 ![HTML](https://img.shields.io/badge/Frontend-HTML-orange)
 ![CSS](https://img.shields.io/badge/Style-CSS-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
