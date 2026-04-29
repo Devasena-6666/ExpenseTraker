@@ -1,5 +1,14 @@
 # 💰 Expense Tracker
 
+![GitHub repo size](https://img.shields.io/github/repo-size/Devasena-6666/expense-tracker)
+![GitHub stars](https://img.shields.io/github/stars/Devasena-6666/expense-tracker?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Devasena-6666/expense-tracker?style=social)
+![HTML](https://img.shields.io/badge/Frontend-HTML-orange)
+![CSS](https://img.shields.io/badge/Style-CSS-blue)
+![JavaScript](https://img.shields.io/badge/Logic-JavaScript-yellow)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 A simple and efficient web application to track daily expenses, manage budgets, and analyze spending habits.
 
 ---
